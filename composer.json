@@ -1,0 +1,24 @@
+{
+  "name": "phpmailer/apix-log-phpmailer",
+  "description": "A PHPMailer logger for Apix log",
+  "type": "library",
+  "minimum-stability": "stable",
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "Marcus Bointon",
+      "email": "phpmailer@synchromedia.co.uk"
+    }
+  ],
+  "require": {
+    "php": ">=5.3",
+    "apix/log": "^1.1",
+    "phpmailer/phpmailer": "^5.2"
+  },
+  "autoload": {
+      "psr-4": {
+          "Apix\\Log\\Logger\\": "src/",
+          "Apix\\Log\\Logger\\tests\\": "tests/"
+      }
+  }
+}
