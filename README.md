@@ -12,7 +12,7 @@ Install the logger via composer:
 
     composer require phpmailer/apix-log-phpmailer
 
-You require at least PHP 5.3.README
+You require at least PHP 5.3.
 
 ##Usage
 
