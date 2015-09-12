@@ -2,6 +2,18 @@
 
 An extension for the [Apix/Log](https://github.com/frqnck/apix-log) PSR-3 logger that sends log messages via email using [PHPMailer](https://github.com/PHPMailer/PHPMailer).
 
+The home repo is [on github](https://github.com/PHPMailer/apix-log-phpmailer), and the composer package is [on packagist](https://packagist.org/packages/phpmailer/apix-log-phpmailer).
+
+Apix Log was written by Franck Cassedanne (@frqnck). This extension is by Marcus Bointon (@Synchro) and is published via the [PHPmailer organisation](https://github.com/PHPMailer) under the BSD license (though note that PHPMailer itself uses the LGPL).
+
+##Installation
+
+Install the logger via composer:
+
+    composer require phpmailer/apix-log-phpmailer
+
+You require at least PHP 5.3.README
+
 ##Usage
 
 Create an Apix PhpMailer Log instance, providing a pre-configured PHPMailer instance to the constructor.
