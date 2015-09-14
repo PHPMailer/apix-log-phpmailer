@@ -1,6 +1,6 @@
 {
   "name": "phpmailer/apix-log-phpmailer",
-  "description": "A PHPMailer logger for Apix log",
+  "description": "A PHPMailer logger for APIx Log",
   "type": "library",
   "minimum-stability": "stable",
   "license": "BSD-3-Clause",
@@ -20,7 +20,7 @@
     "phpmailer/phpmailer": "^5.2"
   },
   "require-dev": {
-      "phpunit/phpunit": "4.8.*"
+    "phpunit/phpunit": "4.8.*"
   },
   "autoload": {
     "psr-4": { "Apix\\Log\\Logger\\": "src/" }
@@ -29,6 +29,6 @@
     "psr-4": { "Apix\\Log\\Logger\\tests\\": "tests/" }
   },
   "provide": {
-      "psr/log-implementation": "1.0.0"
+    "psr/log-implementation": "1.0.0"
   }
 }
