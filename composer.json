@@ -12,7 +12,7 @@
   ],
   "require": {
     "php": ">=5.3",
-    "apix/log": "^1.1",
+    "apix/log": "^1.2",
     "phpmailer/phpmailer": "^5.2"
   },
   "autoload": {

@@ -8,6 +8,7 @@
 namespace Apix\Log\Logger;
 
 use Apix\Log\Exception;
+use Apix\Log\LogEntry;
 use Psr\Log\InvalidArgumentException;
 
 /**
@@ -48,9 +49,9 @@ class PhpMailer extends AbstractLogger implements LoggerInterface
     /**
      * {@inheritDoc}
      */
-    public function write(array $log)
+    public function write(LogEntry $log)
     {
-        $this->phpmailer->Body = $log['msg'];
+        $this->phpmailer->Body = (string)$log;
         try {
             return $this->phpmailer->send();
         } catch (\phpmailerException $e) {
