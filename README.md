@@ -12,7 +12,7 @@ Install the logger via composer:
 
     composer require phpmailer/apix-log-phpmailer
 
-You require at least PHP 5.3.
+You require at least PHP 5.5.
 
 ##Usage
 
@@ -21,13 +21,14 @@ This instance will be used for all subsequent messages.
 
 By default the logger sends an email for each individual log message received, which can be quite inefficient, so call `$logger->setDeferred(true)` to save up the log messages and send them all in one message on `__destruct`.
 
-We suggest you enable exceptions in your PHPMailer instance otherwise you may not be told about problems sending your log messages.
+We suggest you enable exceptions in your PHPMailer instance (by passing `true` to the constructor) otherwise you may not be told about problems sending your log messages.
 
 ##Example
 
 ```php
+use PHPMailer\PHPMailer\PHPMailer;
 // Create a PHPMailer instance with exceptions enabled
-$mailer = new \PHPMailer(true);
+$mailer = new PHPMailer(true);
 $mailer->addAddress('logs@example.com', 'Log Mailbox');
 $mailer->setFrom('myapp@example.com', 'My App');
 $mailer->isSMTP();

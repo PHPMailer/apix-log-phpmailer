@@ -19,7 +19,7 @@ class PhpMailerTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $mail = new \PHPMailer(true);
+        $mail = new \PHPMailer\PHPMailer\PHPMailer(true);
         $mail->addAddress('logs@example.com', 'Log Mailbox');
         $mail->setFrom('myapp@example.com', 'My App');
         $mail->isSMTP();
@@ -62,7 +62,7 @@ class PhpMailerTest extends \PHPUnit_Framework_TestCase
      */
     public function testThrowsInvalidArgumentExceptionWhenNoValidEmail()
     {
-        new PhpMailer(new \PHPMailer);
+        new PhpMailer(new \PHPMailer\PHPMailer\PHPMailer);
     }
 
     public function testConstructor()
@@ -83,7 +83,7 @@ class PhpMailerTest extends \PHPUnit_Framework_TestCase
 
     public function testWriteIsCalled()
     {
-        $mock = $this->getMockBuilder('Apix\Log\Logger\PHPMailer')
+        $mock = $this->getMockBuilder('Apix\Log\Logger\PhpMailer')
                      ->disableOriginalConstructor()
                      ->setMethods(array('write'))
                      ->getMock();
