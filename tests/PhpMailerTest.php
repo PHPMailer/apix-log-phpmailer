@@ -12,7 +12,9 @@
 
 namespace Apix\Log\Logger;
 
-class PhpMailerTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class PhpMailerTest extends TestCase
 {
 
     protected $mailer;
@@ -58,7 +60,7 @@ class PhpMailerTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @expectedException Psr\Log\InvalidArgumentException
-     * @expectedExceptionMessage No valid email address set in \PHPMailer
+     * @expectedExceptionMessage No valid email address set in PHPMailer
      */
     public function testThrowsInvalidArgumentExceptionWhenNoValidEmail()
     {
