@@ -16,26 +16,19 @@ use Psr\Log\InvalidArgumentException;
  *
  * @author Marcus Bointon <phpmailer@synchromedia.co.uk>
  */
-class PhpMailer extends AbstractLogger implements LoggerInterface
+class PHPMailer extends AbstractLogger implements LoggerInterface
 {
     /**
      * A PHPMailer instance to use for sending.
-     * @type PHPMailer
      */
-    protected $phpmailer;
+    protected \PHPMailer\PHPMailer\PHPMailer $phpmailer;
 
     /**
      * Constructor.
-     * @param PHPMailer $phpmailer A preconfigured PHPMailer instance to use for sending.
+     * @param \PHPMailer\PHPMailer\PHPMailer $phpmailer A preconfigured PHPMailer instance to use for sending.
      */
-    public function __construct($phpmailer)
+    public function __construct(\PHPMailer\PHPMailer\PHPMailer $phpmailer)
     {
-        if (!$phpmailer instanceof \PHPMailer\PHPMailer\PHPMailer) {
-            throw new InvalidArgumentException(
-                'Must be an instance of \PHPMailer\PHPMailer\PHPMailer', 1
-            );
-        }
-
         if (count($phpmailer->getToAddresses()) < 1) {
             throw new InvalidArgumentException(
                 'No valid email address set in PHPMailer'
@@ -48,7 +41,7 @@ class PhpMailer extends AbstractLogger implements LoggerInterface
     /**
      * {@inheritDoc}
      */
-    public function write(LogEntry $log)
+    public function write(LogEntry $log): bool
     {
         $this->phpmailer->Body = (string)$log;
         try {
